@@ -34,6 +34,7 @@ INSTALLED_APPS = [
 
     # Local apps
     'pages.apps.PagesConfig',
+    'accounts.apps.AccountsConfig',
 
     # 3rd Party apps
     'crispy_forms',
@@ -45,6 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
