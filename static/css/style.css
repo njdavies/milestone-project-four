@@ -1,0 +1,475 @@
+/* Font */
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700");
+
+/* Body */
+
+html {
+    font-family: "Roboto", sans-serif;
+    height: 100%;
+}
+
+.body {
+    min-height: 100%;
+}
+
+.btn:hover {
+    background-color: #6c757d;
+    color: white;
+}
+
+/* Navbar */
+
+.navbar-brand {
+    font-size: 1.2em;
+    margin-right: 0.5em;
+}
+
+.search-button {
+    padding: 0;
+    background-color: Transparent;
+    border: none;
+}
+
+.fa-search {
+    color: white;
+    margin-left: 0.5em;
+}
+
+#searchbox-text {
+    height: 2em;
+    margin-top: 0.5em;
+}
+
+.fa-user {
+    padding-right: 0.3em;
+}
+
+.fa-shopping-cart {
+    padding-right: 0.3em;
+}
+
+.badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+}
+
+.label-warning[href],
+.badge-warning[href] {
+    background-color: #c67605;
+}
+
+.alert {
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+/* Footer  */
+
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+.footer-link {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.social-links li {
+    padding: 1.5em;
+    padding-bottom: 0;
+}
+
+.social-links li a {
+    color: white;
+}
+
+.footer-copyright {
+    background: #6c757d;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Home Page */
+
+.home-background-picture {
+    height: 100vh;
+    background: url("/static/images/home_picture.jpg") no-repeat;
+    background-position: 46% 0%;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+}
+
+.centered-content {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    text-align: center;
+}
+
+#site-tagline {
+    color: white;
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+.select-btn {
+    background: #483d8b;
+    font-size: 0.85em;
+    font-weight: 600;
+    transform: translateX(-5%) translateY(-45%);
+    color: white;
+}
+
+#auction-header {
+    padding-top: 0.5em;
+    padding-bottom: 0.65em;
+    font-size: 1.5em;
+}
+
+.auction-instruction-header {
+    font-size: 1.2em;
+}
+
+.auction-instruction-icon {
+    color: #483d8b;
+    padding-right: 0.5em;
+}
+
+.auction-instruction-description {
+    padding-bottom: 1em;
+}
+
+#auction-instruction-description-first {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+#sign-up-text {
+    margin-bottom: 2em;
+}
+
+#sign-up-link {
+    color: #483d8b;
+    font-weight: 400;
+}
+
+/* About Us page */
+
+#about-image {
+    max-width: 100%;
+    height: auto;
+}
+
+#about-header {
+    font-weight: 600;
+    font-size: 1.5em;
+    padding-top: 0.5em;
+    text-align: center;
+}
+
+#founder-header {
+    font-size: 1.1em;
+    text-align: center;
+}
+
+#about-text {
+    font-size: 1em;
+}
+
+/* Contact page */
+
+.jumbotron {
+    background: #6c757d;
+    color: #fff;
+    border-radius: 0;
+}
+
+.jumbotron-sm {
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+}
+
+.jumbotron small {
+    color: #fff;
+}
+
+#contact-us-header {
+    font-size: 2em;
+}
+
+#contact-us-header small {
+    font-size: 0.53em;
+}
+
+.fa-envelope {
+    color: #483d8b !important;
+}
+
+.fa-user-contact {
+    padding-right: 0.3em !important;
+    color: #483d8b !important;
+}
+
+.fa-globe {
+    color: #483d8b;
+}
+
+.form-actions {
+    padding-top: 1em;
+    text-align: center;
+}
+
+.contact-btn {
+    background: #483d8b;
+    font-size: 0.85em;
+    font-weight: 600;
+    transform: translateX(-11%) translateY(-45%);
+    color: white;
+}
+
+.contact-message {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+/* Media Queries */
+
+@media (min-width: 360px) {
+    /* Home Page */
+
+    .navbar-brand {
+        margin-right: 2em;
+    }
+}
+
+@media (min-width: 375px) {
+    /* Home Page */
+
+    .navbar-brand {
+        margin-right: 3em;
+    }
+}
+
+@media (min-width: 411px) {
+    /* Home Page */
+
+    .navbar-brand {
+        font-size: 1.3em;
+    }
+}
+
+@media (min-width: 768px) {
+
+    /* Home Page */
+
+    .navbar-brand {
+        font-size: 1em;
+        margin-right: 0;
+        padding-bottom: 0.9em;
+    }
+
+    #nav-link-home {
+        margin-right: 2em;
+        margin-left: 2em;
+    }
+
+    .nav-item {
+        font-size: 0.6em;
+        padding-right: 0.2em;
+    }
+
+    .nav-link {
+        padding-right: 0.5em !important;
+    }
+
+    .fa-search {
+        font-size: 0.75em;
+    }
+
+    #searchbox-text {
+        margin-top: 0;
+        font-size: 0.6em;
+    }
+
+    .nav-item-user {
+        margin-left: 0.25em;
+        padding-left: 1em;
+    }
+
+    .nav-item-cart {
+        padding-left: 0.5em;
+    }
+
+    .fa-user {
+        padding-right: 3em;
+        padding-bottom: 0.05em;
+    }
+
+    .fa-shopping-cart {
+        padding-right: 3em;
+        padding-bottom: 0.05em;
+    }
+
+    #site-tagline {
+        font-size: 2.85em !important;
+    }
+
+    .select-btn {
+        font-size: 1.25em;
+    }
+
+    .footer-link {
+        font-size: 0.5em !important;
+    }
+
+    /* Contact Us Page */
+
+    #contact-section {
+        height: 76vh;
+    }
+
+    .contact-us-wrapper {
+        height: 60vh;
+    }
+
+    .form-control {
+        height: 60%;
+        width: 90%;
+    }
+
+    .contact-btn {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+    /* Home Page  */
+
+    .navbar-brand {
+        font-size: 1.45em;
+        margin-right: 0.5em;
+        padding-bottom: 0.75em;
+    }
+
+    .nav-item {
+        font-size: 0.75em;
+        padding-right: 0.1em;
+    }
+
+    #nav-item-end {
+        padding-right: 0em;
+    }
+
+    .form-inline {
+        padding-right: 0em;
+    }
+
+    .form-control {
+        height: 50%;
+        width: 70%;
+    }
+
+    #searchbox-text {
+        font-size: 0.75em;
+    }
+
+    .fa-user {
+        padding-right: 4em;
+    }
+
+    .fa-shopping-cart {
+        padding-right: 4em;
+    }
+
+    .nav-item-user {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
+
+    #nav-item-cart {
+        padding-right: 0.5em;
+    }
+
+    #site-tagline {
+        font-size: 2.85em !important;
+    }
+
+    .footer-link {
+        font-size: 0.75em !important;
+    }
+
+    /* Contact Us Page */
+
+    #contact-section {
+        height: 82vh;
+    }
+}
+
+@media (min-width: 1367px) {
+    /* Home Page */
+
+    .home-background-picture {
+        background-position: 38% 0%;
+    }
+
+    .navbar-brand {
+        font-size: 2em;
+        margin-right: 0.5em;
+        padding-bottom: 0;
+    }
+
+    #nav-link-home {
+        margin-right: 0.25em;
+        margin-left: 1em;
+    }
+
+    .nav-item {
+        font-size: 1.2em;
+        padding-right: 1em;
+    }
+
+    .nav-padding {
+        padding-left: 1.5em !important;
+    }
+
+    .form-control {
+        height: 60%;
+        width: 75% !important;
+    }
+
+    .fa-shopping-cart {
+        padding-right: 0.5em;
+    }
+
+    #searchbox-text {
+        height: 1.75em;
+        font-size: 1.2em;
+    }
+
+    .fa-user {
+        padding-right: 0.5em;
+    }
+
+    #site-tagline {
+        font-size: 2.85em !important;
+    }
+
+    .footer-link {
+        font-size: 1.2em !important;
+    }
+
+    /* Contact Us Page */
+
+    #contact-section {
+        height: 75vh;
+    }
+}
