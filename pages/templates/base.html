@@ -1,0 +1,152 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport to allow responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <!-- Fonts and Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover.css" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <!-- Display relevant page title, depending on whether a title has been passed to the page url -->
+    {% if title %}
+    <title>Artifact Auctioneers - {{ title }}</title>
+    {% else %}
+    <title>Artifact Auctioneers</title>
+    {% endif %}
+</head>
+
+<body>
+    <!-- Site Banner and navigation bar -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="{% url 'home' %}">ARTIFACT AUCTIONEERS</a>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" id="nav-link-home" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-padding" href="{% url 'era-list' 'Egyptian' %}">Egyptian Artifacts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-padding" href="{% url 'era-list' 'Greek' %}">Greek Artifacts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-padding" href="{% url 'era-list' 'Roman' %}">Roman Artifacts</a>
+                </li>
+                <li class="nav-item nav-padding" id="nav-item-end">
+                    <a class="nav-link" href="{% url 'era-list' 'Assyrian' %}">Assyrian Artifacts</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <form action="{% url 'search' %}" method="GET" class="form-inline">
+                    <button class="search-button" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    <input class="form-control ml-2 w-75" id="searchbox-text" type="text" name="q" value='{{ request.GET.q }}' placeholder="Search Artifacts" aria-label="Search" />
+                </form>
+                {% if user.is_authenticated %}
+                <li class="nav-item nav-item-user">
+                    <a class="nav-link" href="{% url 'logout' %}"><i class="fa fa-user fa-1.5x"></i>Log Out</a>
+                </li>
+                {% else %}
+                <li class="nav-item nav-item-user">
+                    <a class="nav-link" href="{% url 'login' %}"><i class="fa fa-user fa-1.5x"></i>Log In</a>
+                </li>
+                {% endif %}
+                <li class="nav-item" id="nav-item-cart">
+                    <a class="nav-link" href="{% url 'view_cart' %}"><i class="fa fa-shopping-cart fa-1.5x"></i>Cart
+                        {% if product_count > 0 %}
+                        <label class="badge badge-warning">{{ product_count }}</label>
+                        {% endif %}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Alert messages -->
+    {% if messages %}
+    <div class="container">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Page content -->
+    {% block content %}
+    {% endblock content %}
+
+    <!-- Site Footer -->
+    <footer class="bg-dark text-center">
+        <div class="container">
+            <div class="row pt-3">
+                <div class="col-md-3">
+                    <li>
+                        <a class="footer-link" href="{% url 'about' %}">About Us</a>
+                    </li>
+                </div>
+                <div class="col-md-3">
+                    <li>
+                        <a class="footer-link" href="{% url 'products' %}">Products</a>
+                    </li>
+                </div>
+                <div class="col-md-3">
+                    <li>
+                        <a class="footer-link" href="{% url 'contact' %}">Contact</a>
+                    </li>
+                </div>
+                <div class="col-md-3">
+                    <li>
+                        <a class="footer-link" href="{% url 'blog' %}">Blog</a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="list-inline social-links">
+                <li class="list-inline-item">
+                    <a target="_blank" href="https://en-gb.facebook.com" class="hvr-grow" data-toggle="tooltip" title="Facebook"><i class="fa fa-facebook fa-3x"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a target="_blank" href="https://twitter.com/" class="hvr-grow" data-toggle="tooltip" title="Twitter"><i class="fa fa-twitter fa-3x"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a target="_blank" href="https://www.instagram.com" class="hvr-grow" data-toggle="tooltip" title="Instagram"><i class="fa fa-instagram fa-3x"></i></a>
+                </li>
+            </ul>
+        </div>
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">
+            © 2020 Copyright: Artifact Auctioneers
+        </div>
+    </footer>
+
+    <!-- Links to External scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- Contact Form Email scripts -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_J2nBvy8n17ECBQkQsordL");
+        })();
+    </script>
+
+    <!-- Stripe Javascript -->
+    {% block head_js %}
+    {% endblock head_js %}
+
+</body>
+
+</html>

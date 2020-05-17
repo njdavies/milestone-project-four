@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section id="contact-section">
+    <div class="jumbotron jumbotron-sm">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 id="contact-us-header">
+                        Contact us <br><small>We'd love to hear from you</small>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container contact-us-wrapper">
+        <div class="row">
+            <div class="alert alert-success collapse alert-dismissible" id="contact-message-alert" role="alert">
+                <h2 class="contact-message">Thank you for your query! Our team will be in touch shortly.</h2>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <form id="contactForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <div class="input-group-btn">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fa fa-user fa-user-contact text-info"></i></span>
+                                        <input type="text" class="form-control" name="name" placeholder="Enter name" required="required" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <div class="input-group-btn">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fa fa-envelope text-info"></i></span>
+                                        <input type="email" class="form-control" name="email" placeholder="Enter email" required="required" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <select id="subject" name="subject" class="form-control" required="required">
+                                    <option value="na" selected="">Choose One:</option>
+                                    <option value="Artifacts">Artifacts</option>
+                                    <option value="Billing">Bidding Process</option>
+                                    <option value="Suggestions">Suggestions</option>
+                                    <option value="General">General Customer Service Query</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name">Message</label>
+                                <textarea name="message" id="message" class="form-control" rows="8" cols="35" required="required" placeholder="How can we help?"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12 form-actions">
+                            <button type="submit" class="btn contact-btn">
+                                Send Message</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <form>
+                    <legend><i class="fa fa-globe fa-1x"></i> Our office</legend>
+                    <address>
+                        <strong>Artifact Auctioneers</strong><br>
+                        10 Fleet Street<br>
+                        London<br>
+                        EC4Y 1JU<br>
+                        <abbr title="Phone">
+                            P:</abbr>
+                        (1) 234-567-890
+                    </address>
+                    <address>
+                        <strong>Nathan Davies</strong><br>
+                        <a href="mailto:#">admin@artifactauctioneers.com</a>
+                    </address>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Script to send email to site admin once contact form has been submitted -->
+<script>
+    window.onload = function () {
+        document.getElementById('contactForm')
+            .addEventListener('submit', function (event) {
+                event.preventDefault();
+                emailjs.sendForm('gmail', 'ecommerce', event.target)
+                    .then(function (response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                    }, function (error) {
+                        console.log('FAILED...', error);
+                    });
+                $("#contact-message-alert").show();
+            });
+    }
+</script>
+{% endblock content  %}

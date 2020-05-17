@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Section with home page background picture, site tagline and
+  a call to action button to go to store to view all lots -->
+<section>
+  <div class="home-background-picture">
+    <div class="centered-content">
+      <h1 id="site-tagline">Ancient treasures can be yours today....</h1>
+      <br />
+      <a href="{% url 'products' %}" class="btn btn-sm select-btn">Browse our lots</a>
+    </div>
+  </div>
+</section>
+
+<!-- Section which instructs users how to use the site, prompting them to sign up for an account -->
+<section>
+  <div class="container text-center">
+    <div>
+      <h2 id="auction-header">How to use the auction:</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <h3 class="auction-instruction-header">
+          <i class="fa fa-user-plus auction-instruction-icon"></i>Register for
+          a free account
+        </h3>
+        <p id="auction-instruction-description-first">
+          Only an email address is required
+        </p>
+        <p id="sign-up-text"><a id="sign-up-link" href="{% url 'signup' %}"><strong>Sign up now</strong></a></p>
+      </div>
+      <div class="col-md-3">
+        <h3 class="auction-instruction-header">
+          <i class="fa fa-cart-plus auction-instruction-icon"></i>Place your
+          bid or buyout the item
+        </h3>
+        <p class="auction-instruction-description">
+          Place your bids on your desired items and win!
+        </p>
+      </div>
+      <div class="col-md-3">
+        <h3 class="auction-instruction-header">
+          <i class="fa fa-cc-visa auction-instruction-icon"></i>Pay securely
+        </h3>
+        <p class="auction-instruction-description">
+          Select how you pay and submit your payment
+        </p>
+      </div>
+      <div class="col-md-3">
+        <h3 class="auction-instruction-header">
+          <i class="fa fa-truck auction-instruction-icon"></i>Your item is
+          dispatched
+        </h3>
+        <p class="auction-instruction-description">
+          Delivery normally takes between 3-5 working days
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section id="about-section">
+    <div class="container">
+        <img src="{% static 'images/howard_carter.jpg' %}" alt="Picture of Howard Carter" id="about-image">
+        <h1 id="about-header">About Us</h1>
+        <div id="about-text">
+            <p>Founded in 1925 by prominent archeologist Howard Carter, Artifact Auctioneers is a world renowned
+                auction house in the selling of rare antiquities from ancient civilisation. With nearly one hundred
+                years of expertise in finding long lost artifacts, our mission is to obtain not only the most prized
+                and most sought after treasures, but also to make them purchasable as quickly as possible with minimum
+                fuss.
+            </p>
+            <h2 id="founder-header">Howard Carter</h2>
+            <p>Howard Carter was was born in Kensington, London, on March 9, 1874, and the youngest of eight
+                children, although he grew up in Swaffham, which was north of Norfolk, England. Carter had little formal
+                education, but he was a very talented artist, and his principal study was that of art since his father was
+                an illustrator. However, he wanted something different out of life.
+            </p>
+            <p>He first stepped out into the field of archaeology in the fall of 1891, where he began his career with the
+                Egyptian Exploration Fund as a tracer, where he copied drawings and inscriptions on paper for further studying.
+                He was only 17 years old at the time.
+            </p>
+            <p>He proved to be hardworking and faithful to his work, which led him into 31 years of digging and
+                discovering before he found many treasures. One of these discoveries included one of the most
+                valuable treasures ever uncovered - King Tut's tomb.
+            </p>
+            <p>After retiring from field investigations Carter founded Artifact Auctioneers to bring archeological
+                enthusiasts together from all over the world to share in his passion for artifacts.
+            </p>
+        </div>
+    </div>
+</section>
+{% endblock content %}
