@@ -269,6 +269,96 @@ li {
     text-align: center;
 }
 
+/* Blog page */
+
+#blog-section {
+    background-color: white;
+}
+
+.blog-article {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.blog-title {
+    font-size: 1.5em;
+    padding-left: 0.25em;
+    padding-top: 0.25em;
+}
+
+.blog-date {
+    font-size: 0.85em;
+    padding-left: 0.5em;
+}
+
+.blog-image {
+    max-width: 100%;
+    padding: 0.5em;
+    height: auto;
+}
+
+.blog-text {
+    padding: 0.5em;
+}
+
+.blog-divider {
+    margin: 0;
+}
+
+#comment-count {
+    margin-left: 0.5em;
+    font-size: 0.75em;
+}
+
+#any-comments {
+    margin-top: 0.5em;
+}
+
+/* Blog Post page */
+
+#blog-post-section {
+    margin-bottom: 1em;
+}
+
+#jumbotron-blog {
+    padding-top: 1.75em;
+    padding-bottom: 1em;
+    margin-bottom: 1.5em;
+}
+
+.blog-btn {
+    background: #483d8b;
+    margin-left: 0;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: white !important;
+}
+
+#blog-comment-title {
+    font-size: 1.25em;
+    padding-bottom: 0.5em;
+}
+
+.comment-container {
+    padding-bottom: 1em;
+}
+
+.comment-wrapper {
+    background: white;
+}
+
+.comment {
+    padding: 1em;
+}
+
+.comment-spacing {
+    margin-bottom: 1.5em;
+}
+
+.blog-comment-divider {
+    width: 90%;
+}
+
 /* Media Queries */
 
 @media (min-width: 360px) {
@@ -282,6 +372,12 @@ li {
 
     #account-section {
         min-height: 48vh;
+    }
+
+    /* Blog Page */
+
+    .blog-text {
+        font-size: 0.9em;
     }
 }
 
@@ -407,6 +503,24 @@ li {
     .contact-btn {
         font-size: 1em;
     }
+
+    /* Blog Page */
+
+    .blog-title {
+        font-size: 2em;
+    }
+
+    .blog-text {
+        font-size: 1.15em;
+    }
+
+    .blog-btn {
+        font-size: 1em;
+    }
+
+    #blog-post-section {
+        height: 76vh;
+    }
 }
 
 @media (min-width: 1024px) and (max-width: 1366px) {
@@ -476,6 +590,25 @@ li {
     #contact-section {
         height: 82vh;
     }
+
+    /* Blog Page */
+
+    #blog-section {
+        height: 100vh;
+    }
+
+    .blog-title {
+        font-size: 3em;
+    }
+
+    .blog-date {
+        font-size: 1.25em;
+    }
+
+    /* Blog Comment page  */
+    #blog-post-section {
+        height: 83vh;
+    }
 }
 
 @media (min-width: 1367px) {
@@ -541,5 +674,16 @@ li {
 
     #contact-section {
         height: 75vh;
+    }
+
+    /* Blog Page */
+
+    .blog-title {
+        font-size: 3em;
+    }
+
+    .blog-date {
+        font-size: 1em;
+        padding-left: 0.75em;
     }
 }
