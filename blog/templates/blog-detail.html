@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="blog-section">
+    <article class="blog-article">
+        <div class="container">
+            <div class="card">
+                <h1 class="blog-title">{{ post.title }}</h1>
+                <h2 class="blog-date">{{ post.date }}</h2>
+                <hr class="blog-divider">
+                <img src="{{ MEDIA_URL }}{{ post.image }}" alt="Picture of {{ post.image_name }}" class="blog-image">
+                <hr class="blog-divider">
+                <div class="blog-text">
+                    <p>{{ post.body }}</p>
+                    <a href="{% url 'add_comment_to_post' post.id %}" class="btn blog-btn">Add Comment</a>
+                    <a href="{% url 'blog' %}" class="btn blog-btn">Back to Blog</a>
+                </div>
+            </div>
+    </article>
+    <div class="container comment-container">
+        <h2 id="blog-comment-title">Comments ({{ post.comments.count }})</h2>
+        <div class="comment-wrapper">
+            {% for comment in post.comments.all %}
+            <div class="comment">
+                <div class="comment-spacing">
+                    <strong>{{ comment.author }}</strong> | <span class="text-muted">{{ comment.created_date|date }}</span>
+                </div>
+                <p>{{ comment.text|linebreaks }}</p>
+            </div>
+            <hr class="blog-comment-divider">
+            {% empty %}
+            <p id="any-comments">No comments here yet :(</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock content %}

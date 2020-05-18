@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<section id="blog-post-section">
+    <div class="jumbotron" id="jumbotron-blog">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 id="account-header">
+                        New Comment
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button type="submit" class="btn blog-btn">Add comment</button>
+                    <a href="{% url 'blog' %}" class="btn blog-btn">Back to Blog</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
