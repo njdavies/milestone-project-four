@@ -223,6 +223,23 @@ li {
     bottom: 0;
 }
 
+/* Checkout Page */
+
+#checkout-header {
+    font-size: 2em;
+}
+
+#payment-form {
+    margin-bottom: 2em;
+}
+
+#submit_payment_btn {
+    background: #483d8b;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: white;
+}
+
 /* Home Page */
 
 .home-background-picture {
@@ -1009,6 +1026,12 @@ label {
         margin-right: 0.75em;
     }
 
+    /* Checkout Page */
+
+    #submit_payment_btn {
+        font-size: 1em;
+    }
+
     /* Contact Us Page */
 
     #contact-section {
@@ -1209,6 +1232,12 @@ label {
 
     .text-right {
         margin-right: 2em;
+    }
+
+    /* Checkout Page */
+
+    #checkout-section {
+        min-height: 82vh;
     }
 
     /* Contact Us Page */
