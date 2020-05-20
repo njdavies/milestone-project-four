@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="cart-section">
+    <div class="container">
+        <h1 id="cart-header">Your Cart</h1>
+
+        {% for item in cart_items %}
+
+        <div class="row lot-wrapper">
+            <div class="col-5 col-md-6 image-wrapper">
+                <img src="{{ MEDIA_URL }}{{ item.product.image }}" class="lot-image" alt="Picture of {{ item.name }}" />
+            </div>
+            <div class="col-7 col-md-6 cart-content-wrapper">
+                <h2 class="cart-lot-header">{{ item.product.name }}</h2>
+                <p class="cart-lot-text">
+                    <span class="bid-value"> £{{ item.product.buyout_price }}</span>
+                </p>
+
+                <form class="add-form" method="post" action="{% url 'remove_from_cart' item.product.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn remove-btn" style="background-color:transparent;">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </button>
+                </form>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p class="total-header text-right"> Total: <span class="bid-value">£{{ total }}</span> </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row cart-options">
+            <div class="col">
+                <a href="{% url 'products' %}" class="btn btn-sm" id="continue-btn">Continue shopping</a>
+            </div>
+            <div class="col">
+                <a href="{% url 'checkout' %}" class="btn btn-sm" id="checkout-btn">Checkout</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
