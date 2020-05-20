@@ -1,0 +1,14 @@
+Hi {{ user }},
+
+Thank you for your payment.
+
+Order Summary:
+
+Item:{{ product.name }}
+Price:£{{ product.buyout_price }}
+
+Your item will be shipped to you in the next 3-5 working days.
+
+Sincerely,
+
+The Artifact Auctioneers Team

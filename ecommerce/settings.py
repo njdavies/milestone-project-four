@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'products.apps.ProductsConfig',
     'search.apps.SearchConfig',
     'cart.apps.CartConfig',
+    'checkout.apps.CheckoutConfig',
 
     # 3rd Party apps
     'crispy_forms',
@@ -150,3 +151,6 @@ EMAIL_HOST_USER = 'apikey'
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+STRIPE_PUBLISHABLE = os.environ.get('STRIPE_PUBLISHABLE')
+STRIPE_SECRET = os.environ.get('STRIPE_SECRET')
