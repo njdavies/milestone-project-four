@@ -125,6 +125,104 @@ li {
     margin-top: 1.5em;
 }
 
+/* Cart page */
+
+.cart-section {
+    background-color: #f1f1f1;
+    min-height: 65vh;
+}
+
+#cart-header {
+    padding-top: 0.5em;
+    font-size: 1.75em;
+    text-align: center;
+}
+
+.cart-content-wrapper {
+    height: 150px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.cart-lot-header {
+    padding-top: 2.75em;
+    text-align: center;
+    font-size: 0.85em;
+    font-weight: 800;
+}
+
+.cart-lot-text {
+    font-size: 0.7em;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    text-align: center;
+}
+
+.cart-image {
+    height: 125px;
+    width: 100%;
+}
+
+.remove-btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.fa-trash {
+    color: #483d8b;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.fa-trash:hover {
+    color: #6c757d;
+}
+
+.text-right {
+    margin-right: 1em;
+}
+
+.total-header {
+    text-align: center;
+    font-size: 0.85em;
+    font-weight: 800;
+}
+
+.cart-options {
+    margin-top: 1em;
+    height: 35px;
+}
+
+#continue-btn {
+    background: #483d8b;
+    font-size: 0.75em;
+    font-weight: 600;
+    margin-left: 1.3em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    color: white;
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    bottom: 0;
+}
+
+#checkout-btn {
+    background: #483d8b;
+    font-size: 0.75em;
+    font-weight: 600;
+    margin-left: 2em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    color: white;
+    position: absolute;
+    display: inline-block;
+    right: 0;
+    bottom: 0;
+}
+
 /* Home Page */
 
 .home-background-picture {
@@ -856,6 +954,61 @@ label {
         width: 35%;
     }
 
+    /* Cart Page */
+
+    .cart-section {
+        min-height: 78vh;
+    }
+
+    #cart-header {
+        font-size: 2.75em;
+    }
+
+    .cart-content-wrapper {
+        height: 300px;
+        width: 300px;
+    }
+
+    .cart-image {
+        height: 300px;
+        width: 300px;
+    }
+
+    .cart-lot-header {
+        padding-top: 2.75em;
+        font-size: 1.5em;
+    }
+
+    .cart-lot-text {
+        font-size: 1.5em;
+    }
+
+    .fa-trash {
+        font-size: 2em;
+    }
+
+    .text-right {
+        margin-right: 1.5em;
+    }
+
+    .total-header {
+        font-size: 1.5em;
+    }
+
+    .cart-options {
+        margin-top: 2em;
+    }
+
+    #continue-btn {
+        font-size: 1.25em;
+        margin-left: 0.75em;
+    }
+
+    #checkout-btn {
+        font-size: 1.25em;
+        margin-right: 0.75em;
+    }
+
     /* Contact Us Page */
 
     #contact-section {
@@ -1034,6 +1187,30 @@ label {
         height: 82vh;
     }
 
+    /* Cart Page */
+
+    .cart-section {
+        min-height: 84vh;
+    }
+
+    .cart-lot-header {
+        padding-top: 5em;
+    }
+
+    .cart-content-wrapper {
+        height: 450px;
+        width: 350px;
+    }
+
+    .cart-image {
+        height: 450px;
+        width: 100%;
+    }
+
+    .text-right {
+        margin-right: 2em;
+    }
+
     /* Contact Us Page */
 
     #contact-section {
@@ -1166,6 +1343,22 @@ label {
 
     #jumbotron-account {
         padding-top: 2em;
+    }
+
+    /* Cart Page */
+
+    .cart-content-wrapper {
+        height: 575px;
+        width: 100%;
+    }
+
+    .cart-image {
+        height: 550px;
+        width: 100%;
+    }
+
+    .cart-lot-header {
+        padding-top: 4.5em;
     }
 
     /* Contact Us Page */
