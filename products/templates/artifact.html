@@ -1,0 +1,205 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- This page provides more detailed information about the selected artifact and allows the user to make bids or buy the item -->
+
+<section id="artifact-section">
+    <div class="container">
+        {% if not user.is_authenticated %}
+        <div class="alert alert-danger">
+            <p class="login-alert-message"><i class="fa fa-exclamation-circle fa-lg"></i>You'll need to <a href="{% url 'login' %}">log in</a> or <a href="{% url 'signup' %}">register</a> for free before
+                bidding/purchasing</p>
+        </div>
+        {% endif %}
+        <div class="artifact-content">
+            <h1 id="artifact-header">{{ product.name }}</h1>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <div>
+                    <img id="artifact-image" src="{{ MEDIA_URL }}{{ product.image }}" alt="Picture of {{ product.name }}">
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 artifact-content align-self-center">
+
+                {% if not user.is_authenticated %}
+                <div>
+                    {% if bid.current_bid__max >= product.starting_price %}
+                    <span id="artifact-bid-price-logout"><strong> Current Bid: </strong><span class="bid-value">£{{ bid.current_bid__max }}</span></span>
+                    <span> <a data-toggle="modal" data-target="#infoModal"><i class="fa fa-info-circle" aria-hidden="true"></i></a></span>
+                    {% else %}
+                    <span id="artifact-bid-price-logout"><strong> Starting Price: </strong><span class="bid-value">£{{ product.starting_price }}</span></span>
+                    <span> <a data-toggle="modal" data-target="#infoModal"><i class="fa fa-info-circle" aria-hidden="true"></i></a></span>
+                    {% endif %}
+
+                    <!-- Information Modal -->
+                    <div class="modal" id="infoModal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Bidding information</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <ul class="list-spacing">
+                                        <li>The initial bid on any auction must at least match the starting price provided.</li>
+                                        <li>Bids must be in whole pounds</li>
+                                        <li>All auctions have a maximum bid value of £300,000.00.</li>
+                                        <li> Once the end date of an auction has been reached the customer with the highest bid will win the artifact. Our administration team will then
+                                            contact the customer to take payment/shipping details.
+                                        </li>
+                                        <li> If you have any queries regarding the bidding process please <a href="{% url 'contact' %}"> contact us.</a></li>
+                                    </ul>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-sm artifact-btn" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <small id="all-bids-logout"><a href="" data-toggle="modal" data-target="#bidsModal">See all bids</a></small>
+                    </div>
+                    <!-- Bids Modal -->
+                    <div class="modal" id="bidsModal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <table class="table table-bordered">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th>User</th>
+                                                <th>Bid</th>
+                                                <th>Date</th>
+                                            </tr>
+                                        </thead>
+                                        {% for bid in bids %}
+                                        <tbody>
+                                            <tr>
+                                                <td>{{ bid.current_bid_user }}</td>
+                                                <td>{{ bid.current_bid }}</td>
+                                                <td>{{ bid.current_bid_date }}</td>
+                                            </tr>
+                                        </tbody>
+                                        {% endfor %}
+                                    </table>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-sm artifact-btn" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% else %}
+
+                {% if bid.current_bid__max >= product.starting_price %}
+                <p id="artifact-bid-price-login"><strong> Current Bid: </strong><span class="bid-value">£{{ bid.current_bid__max|floatformat:2 }}</span></p>
+                {% else %}
+                <p id="artifact-bid-price-login"><strong> Starting Price: </strong><span class="bid-value">£{{ product.starting_price }}</span></p>
+                {% endif %}
+
+                <form class="bid-form" method="POST" action="{% url 'artifact' product.id %}">
+                    {% csrf_token %}
+                    <a data-toggle="modal" data-target="#infoModal"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+
+                    <!-- Information Modal -->
+                    <div class="modal" id="infoModal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Bidding information</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <ul class="list-spacing">
+                                        <li>The initial bid on any auction must at least match the starting price provided.</li>
+                                        <li>Bids must be in whole pounds</li>
+                                        <li>All auctions have a maximum bid value of £300,000.00.</li>
+                                        <li> Once the end date of an auction has been reached the customer with the highest bid will win the artifact. Our administration team will then
+                                            contact the customer to take payment/shipping details.
+                                        </li>
+                                        <li> If you have any queries regarding the bidding process please <a href="{% url 'contact' %}"> contact us.</a></li>
+                                    </ul>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-sm artifact-btn" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form validation to only allow bids that are a minimum of either £1 higher than the previous bid or equal to the Starting Price, and less than 
+                    the maximum bid allowed, which is £300,000.00-->
+                    {% if not bid.current_bid__max  %}
+                    <input type="number" name="bid" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="9" id="bid-input-field" min="{{ product.starting_price|floatformat:2 }}" max="300000" style="width:6em" required>
+                    {% else %}
+                    <input type="number" name="bid" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="9" id="bid-input-field" min="{{ bid.current_bid__max|add:'1' }}" max="300000" style="width:6em" required>
+                    {% endif %}
+
+                    <button type="submit" class="btn btn-sm artifact-btn">Place bid</button>
+                </form>
+                <div>
+                    <small id="all-bids-login"><a href="" data-toggle="modal" data-target="#bidsModal">See all bids</a></small>
+                </div>
+
+                <!-- Bids Modal -->
+                <div class="modal" id="bidsModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <table class="table table-bordered">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th>User</th>
+                                            <th>Bid</th>
+                                            <th>Date</th>
+                                        </tr>
+                                    </thead>
+                                    {% for bid in bids %}
+                                    <tbody>
+                                        <tr>
+                                            <td>{{ bid.current_bid_user }}</td>
+                                            <td>{{ bid.current_bid }}</td>
+                                            <td>{{ bid.current_bid_date }}</td>
+                                        </tr>
+                                    </tbody>
+                                    {% endfor %}
+                                </table>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-sm artifact-btn" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="add-form" method="post" action="{% url 'add_to_cart' product.id %}">
+                    {% csrf_token %}
+                    <input name="disabled" type="text" id="buyout-input-field" value="£{{ product.buyout_price }}" size="8" disabled> <button class="btn btn-sm artifact-btn" type="submit">Add to cart</button>
+                </form>
+
+                {% endif %}
+                <hr>
+                <h2 class="description-header">Description</h2>
+                <p class="artifact-info"><strong>Era: </strong>{{ product.era }}</p>
+                <p class="artifact-info"><strong>Age: </strong>{{ product.age }}</p>
+                <p class="artifact-info"><strong>Starting Price: </strong>£{{ product.starting_price }}</p>
+                <p class="artifact-info"><strong>End Date: </strong>{{ product.end_date }}</p>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <hr>
+                <h2 class="description-header">History</h2>
+                {{ product.description }}
+                <div class="artifact-content">
+                    <a href="{% url 'products' %}" class="btn btn-sm" id="lots-btn">Back to store</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

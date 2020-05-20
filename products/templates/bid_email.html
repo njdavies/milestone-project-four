@@ -1,0 +1,19 @@
+<!-- The HTML template used to send an email confirmation once a bid has been received -->
+
+<p>Hi {{ user }},</p>
+
+<p>Thank you for your bid.</p>
+
+<h3>Bid Summary:</h3>
+
+<p>
+    <strong>Item:</strong> {{ product.name }}<br>
+    <strong>Auction End Date:</strong> {{ product.end_date }}<br>
+    <strong>Bid:</strong> <span>&pound;</span>{{ new_bid.current_bid|floatformat:2 }}
+</p>
+
+<p>Please check the lot regularly to ensure you have the best chance of winning the auction.</p>
+
+<p>Sincerely,</p>
+
+<p>The Artifact Auctioneers Team</p>

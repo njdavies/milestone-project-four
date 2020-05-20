@@ -1,0 +1,15 @@
+Hi {{ user }},
+
+Thank you for your bid.
+
+Bid Summary:
+
+Item: {{ product.name }}
+Bid: £{{ new_bid.current_bid }}
+Auction End Date:{{ product.end_date }}
+
+Please check the lot regularly to ensure you have the best chance of winning the auction.
+
+Sincerely,
+
+The Artifact Auctioneers Team

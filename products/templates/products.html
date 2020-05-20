@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- This page lists all of the products in the store -->
+<section class="lots-section">
+    <div class="container">
+        <h1 id="products-header">Browse lots</span></h1>
+        <h2 id="sort-header">Sort by:</h2>
+        <form method="GET" action="{% url 'sorted_products' %}">
+            <div class="form-group">
+                <select onchange="this.form.submit()" id="sort" name="sort" class="form-control dropdown-box">
+                    <option value=""></option>
+                    <option value="end_date">End Date</option>
+                    <option value="starting_price">Starting Price</option>
+
+                </select>
+            </div>
+        </form>
+        {% for product in Products %}
+        <div class="row align-items-center lot-wrapper">
+            <div class="col-5 col-md-6 image-wrapper">
+                <img src="{{ MEDIA_URL }}{{ product.image }}" class="lot-image" alt="Picture of {{ product.name }}">
+            </div>
+            <div class="col-7 col-md-6 lot-content-wrapper">
+                <h3 class="lot-header">{{ product.name }}</h3>
+                <div class="lot-text">
+                    <p class="price-padding"><strong>Starting Price:<span class="starting-price"> £{{ product.starting_price }}</span></strong></p>
+                    <p><strong>End Date:</strong> {{ product.end_date }}</p>
+                </div>
+                <a class="btn btn-sm lot-btn" href="{% url 'artifact' product.pk %}">Go to lot</a>
+            </div>
+        </div>
+        {% endfor %}
+        <div class="row">
+            <div class="container center">
+                {% if is_paginated %}
+
+                {% if page_obj.has_previous %}
+                <a class="btn btn-sm page-btn mb-4" href="?page=1">First</a>
+                <a class="btn btn-sm page-btn mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                {% endif %}
+
+                {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                <a class="btn btn-sm page-btn mb-4" href="?page={{ num }}">{{ num }}</a>
+                {% elif num > page_obj.number|add:'-4' and num < page_obj.number|add:'4' %}
+                <a class="btn btn-sm page-btn mb-4" href="?page={{ num }}">{{ num }}</a>
+                {% endif %}
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                <a class="btn btn-sm page-btn mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+                <a class="btn btn-sm page-btn mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+                {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
