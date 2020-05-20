@@ -10,7 +10,7 @@ class ProductsPageTests(TestCase):
     """
 
     def test_products_page_status_code(self):
-        response = self.client.get('/products')
+        response = self.client.get('/products/')
         self.assertEqual(response.status_code, 200)
 
     def test_view_url_by_name(self):
@@ -25,8 +25,8 @@ class ProductsPageTests(TestCase):
 
 class ArtifactPageTests(TestCase):
     """
-    Tests to check that the Artifact page exists and returns an HTTP 200 status code,
-    uses the correct url name in the view and uses the correct template.
+    Tests to check that the Artifact page exists and uses the correct url name
+    in the view and uses the correct template.
     """
 
     def setUp(self):
@@ -36,12 +36,8 @@ class ArtifactPageTests(TestCase):
         response = self.client.get('/products/artifact/1')
         self.assertEqual(response.status_code, 200)
 
-    def test_view_url_by_name(self):
-        response = self.client.get(reverse('artifact'))
-        self.assertEqual(response.status_code, 200)
-
     def test_view_uses_correct_template(self):
-        response = self.client.get(reverse('artifact'))
+        response = self.client.get('/products/artifact/1')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'artifact.html')
 
