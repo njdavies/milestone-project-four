@@ -629,6 +629,12 @@ label {
     margin-bottom: 2em;
 }
 
+/* Search Products Page */
+
+#sort-header-search {
+    font-size: 1.2em;
+}
+
 /* Media Queries */
 
 @media (min-width: 320px) {
@@ -640,6 +646,16 @@ label {
 
     .cart-options {
         margin-top: 0.5em;
+    }
+
+    /* Search Products Page */
+
+    .lots-section-search {
+        min-height: 45vh;
+    }
+
+    #sort-header-search {
+        padding-top: 0.5em;
     }
 }
 
@@ -679,6 +695,12 @@ label {
     #artifact-image {
         height: 375px;
     }
+
+    /* Search Products Page */
+
+    .lots-section-search {
+        min-height: 52vh;
+    }
 }
 
 @media (min-width: 375px) {
@@ -703,6 +725,12 @@ label {
     .lot-header {
         font-size: 1em;
         padding-top: 0.5em;
+    }
+
+    /* Search Products Page */
+
+    .lots-section-search {
+        min-height: 55vh;
     }
 }
 
@@ -737,6 +765,12 @@ label {
 
     #artifact-image {
         height: 425px;
+    }
+
+    /* Search Products Page */
+
+    .lots-section-search {
+        min-height: 57vh;
     }
 }
 
@@ -926,6 +960,16 @@ label {
     #lots-btn {
         font-size: 1.25em;
     }
+
+    /* Search Products Page */
+
+    #sort-header-search {
+        font-size: 1.75em;
+    }
+
+    .lots-section-search {
+        min-height: 76vh;
+    }
 }
 
 @media (min-width: 1024px) and (max-width: 1366px) {
@@ -1056,6 +1100,12 @@ label {
 
     #artifact-image {
         height: 500px;
+    }
+
+    /* Search Products Page */
+
+    .lots-section-search {
+        min-height: 82vh;
     }
 }
 
