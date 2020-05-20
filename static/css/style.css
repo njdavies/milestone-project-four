@@ -359,7 +359,289 @@ li {
     width: 90%;
 }
 
+/* Products page */
+
+.lots-section,
+.lots-section-search {
+    background-color: #f1f1f1;
+}
+
+#products-header {
+    font-size: 1.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+#product-count {
+    font-size: 0.75em;
+    color: #a2a3a5;
+}
+
+#sort-header {
+    font-size: 1.2em;
+}
+
+.dropdown-box {
+    width: 11em;
+    height: 2em;
+    padding: 0 !important;
+    font-size: 0.85em !important;
+}
+
+.lot-wrapper {
+    background: white;
+    padding: 0.25em;
+    margin: 0 0 0.75em 0;
+}
+
+.lot-content-wrapper {
+    height: 150px;
+    width: 115px;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+}
+
+.image-wrapper {
+    padding: 0;
+}
+
+.lot-image {
+    height: 150px;
+    width: 100%;
+}
+
+.lot-header {
+    padding-top: 1em;
+    margin-left: 0.75em;
+    font-size: 0.85em;
+    font-weight: 800;
+}
+
+.lot-text p {
+    font-size: 0.7em;
+    padding-left: 0.75sem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.bid-value {
+    color: blue;
+    font-weight: 700;
+}
+
+.price-padding {
+    padding-top: 1em;
+}
+
+.starting-price {
+    color: blue;
+}
+
+.closed-status {
+    color: red;
+}
+
+
+.lot-btn {
+    background: #483d8b;
+    font-size: 0.75em;
+    font-weight: 600;
+    margin-left: 0.5em;
+    color: white;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.center {
+    text-align: center;
+}
+
+.center a {
+    font-size: 0.75em;
+}
+
+/* Artifact page  */
+
+#artifact-section {
+    margin-top: 1em;
+}
+
+.alert-danger {
+    margin-top: 1em;
+    font-size: 0.75;
+    text-align: center;
+}
+
+.login-alert-message {
+    padding-bottom: 0 !important;
+}
+
+.fa-exclamation-circle {
+    padding-right: 0.25em;
+}
+
+.artifact-content {
+    text-align: center;
+}
+
+#artifact-header {
+    font-size: 1.5em;
+    padding-bottom: 0.50em;
+    font-weight: 800;
+}
+
+#artifact-image {
+    height: 350px;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+#artifact-bid-price-login {
+    padding-top: 0.25em;
+    margin-bottom: 2em;
+    font-size: 1.25em;
+    text-align: center;
+}
+
+#artifact-bid-price-logout {
+    padding-top: 0.25em;
+    margin-bottom: 0em;
+    font-size: 1.25em;
+    text-align: center;
+}
+
+.fa-info-circle {
+    color: #483d8b;
+    font-size: 1.70em;
+}
+
+.modal-header {
+    display: block;
+}
+
+.list-spacing {
+    padding-left: 1em !important;
+}
+
+.modal-list {
+    list-style-type: disc !important;
+    list-style: outside;
+    text-align: left;
+}
+
+.input-field {
+    margin-left: 0.75em;
+    margin-bottom: 2.5em;
+}
+
+#id_current_bid {
+    border-radius: 25px;
+    margin-left: 0.75em;
+    width: 6.5em;
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+#buyout-input-field {
+    border-radius: 25px;
+    margin-left: 0.5em;
+    margin-left: 2.25em;
+}
+
+#bid-input-field {
+    border-radius: 25px;
+    margin-left: 0.5em;
+}
+
+#buy-header {
+    margin-right: 8em;
+    margin-bottom: 0.25em;
+    margin-top: 0.5em;
+}
+
+#lots-btn {
+    background: #483d8b;
+    font-size: 0.75em;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 2em;
+    margin-top: 1em;
+}
+
+.description-header {
+    padding-top: 0;
+    font-size: 1.5em;
+}
+
+.artifact-info {
+    margin: 0;
+    padding: 0;
+    line-height: 30px;
+}
+
+.artifact-btn {
+    background: #483d8b;
+    font-size: 0.75em;
+    margin-left: 0.5em;
+    font-weight: 600;
+    color: white;
+    width: 80px;
+}
+
+.input,
+label {
+    display: block;
+}
+
+.input-field {
+    border-radius: 25px;
+    margin-bottom: 0.5em !important;
+}
+
+.bid-form {
+    display: inline-block;
+}
+
+#all-bids-login {
+    margin-right: 7em;
+}
+
+#all-bids-logout {
+    margin-right: 13em;
+}
+
+.add-form {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
 /* Media Queries */
+
+@media (min-width: 320px) {
+    /* Products Page */
+
+    .lot-header {
+        margin-bottom: 0 !important;
+    }
+
+    .cart-options {
+        margin-top: 0.5em;
+    }
+}
 
 @media (min-width: 360px) {
     /* Home Page */
@@ -379,6 +661,24 @@ li {
     .blog-text {
         font-size: 0.9em;
     }
+
+    /* Products Page */
+
+    .lot-header {
+        font-size: 1em;
+        padding-top: 0.75em;
+    }
+
+    .lot-text {
+        font-size: 0.95em;
+        padding-left: 1em;
+    }
+
+    /* Artifact Page */
+
+    #artifact-image {
+        height: 375px;
+    }
 }
 
 @media (min-width: 375px) {
@@ -393,6 +693,17 @@ li {
     #account-section {
         height: 80vh;
     }
+
+    /* Products Page */
+
+    #lots-section {
+        min-height: 62vh;
+    }
+
+    .lot-header {
+        font-size: 1em;
+        padding-top: 0.5em;
+    }
 }
 
 @media (min-width: 411px) {
@@ -400,6 +711,32 @@ li {
 
     .navbar-brand {
         font-size: 1.3em;
+    }
+
+    /* Products Page */
+
+    #lots-section {
+        min-height: 58vh;
+    }
+
+    .lot-content-wrapper {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .lot-header {
+        padding-top: 0.75em;
+        padding-right: 1.25em;
+    }
+
+    .lot-text {
+        padding-right: 1.25em;
+    }
+
+    /* Artifact Page */
+
+    #artifact-image {
+        height: 425px;
     }
 }
 
@@ -521,6 +858,74 @@ li {
     #blog-post-section {
         height: 76vh;
     }
+
+    /* Products Page */
+
+    #lots-section {
+        min-height: 76vh;
+    }
+
+    #products-header {
+        font-size: 2em;
+    }
+
+    #sort-header {
+        font-size: 1.75em;
+    }
+
+    .dropdown-box {
+        width: 12em;
+        font-size: 1em !important;
+    }
+
+    .lot-content-wrapper {
+        height: 300px;
+        width: 300px;
+    }
+
+    .lot-image {
+        width: 300px;
+        height: 300px;
+    }
+
+    .lot-header {
+        font-size: 1.75em;
+        padding-top: 1em;
+    }
+
+    .lot-btn {
+        font-size: 1.25em;
+        right: 135px;
+        bottom: 35px;
+    }
+
+    .lot-text {
+        font-size: 1.75em;
+    }
+
+    .center a {
+        font-size: 1.25em;
+    }
+
+    /* Artifact Page */
+
+    .fa-exclamation-circle {
+        font-size: 1.75em;
+    }
+
+    #artifact-header {
+        font-size: 2em;
+    }
+
+    .artifact-btn {
+        font-size: 1.25em !important;
+        width: 6.1em;
+        line-height: 1em;
+    }
+
+    #lots-btn {
+        font-size: 1.25em;
+    }
 }
 
 @media (min-width: 1024px) and (max-width: 1366px) {
@@ -609,6 +1014,49 @@ li {
     #blog-post-section {
         height: 83vh;
     }
+
+    /* Products Page */
+
+    #lots-section {
+        min-height: 82vh;
+    }
+
+    .dropdown-box {
+        width: 12em;
+    }
+
+    .lot-image {
+        height: 450px;
+        width: 90%;
+    }
+
+    .lot-content-wrapper {
+        height: 450px;
+        width: 90%;
+    }
+
+    .lot-header {
+        padding-top: 4.5em;
+    }
+
+    .lot-text {
+        font-size: 2em;
+    }
+
+    .lot-btn {
+        right: 190px;
+        bottom: 100px;
+    }
+
+    /* Artifacts Page */
+
+    #artifact-section {
+        min-height: 81vh;
+    }
+
+    #artifact-image {
+        height: 500px;
+    }
 }
 
 @media (min-width: 1367px) {
@@ -685,5 +1133,36 @@ li {
     .blog-date {
         font-size: 1em;
         padding-left: 0.75em;
+    }
+
+    /* Products Page */
+
+    .dropdown-box {
+        width: 12em !important;
+    }
+
+    .lot-image {
+        height: 575px;
+        width: 100%;
+    }
+
+    .lot-content-wrapper {
+        height: 550px;
+    }
+
+    .lot-header {
+        padding-top: 4.5em;
+    }
+
+    .lot-btn {
+        font-size: 1.25em;
+        right: 220px;
+        bottom: 180px;
+    }
+
+    /* Artifact Page */
+
+    #artifact-image {
+        height: 600px;
     }
 }
