@@ -5,6 +5,6 @@ urlpatterns = [
     path('', BlogListView.as_view(), {'title': 'Blog'}, name='blog'),
     path('post/<int:pk>/', BlogDetailView.as_view(),
          {'title': 'Post'}, name='blog-post'),
-    path('post/<int:pk>/comment/', add_comment_to_post, {'title': 'Comment'},
+    path('post/<int:pk>/comment/', add_comment_to_post,
          name='add_comment_to_post'),
 ]
