@@ -334,6 +334,7 @@ li {
     background: #6c757d;
     color: #fff;
     border-radius: 0;
+    margin-bottom: 1em;
 }
 
 .jumbotron-sm {
@@ -1349,6 +1350,10 @@ label {
 
     .fa-shopping-cart {
         padding-right: 0.5em;
+    }
+
+    .fa-search {
+        font-size: 1.25em !important;
     }
 
     #searchbox-text {

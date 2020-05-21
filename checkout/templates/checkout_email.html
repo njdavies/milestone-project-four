@@ -9,11 +9,11 @@
 {% for product in products %}
 <p>
     <strong>Item:</strong> {{ product.name }}<br>
-    <strong>Price:</strong> £{{ product.buyout_price }}
+    <strong>Price:</strong> <span>&pound;</span>{{ product.buyout_price }}
 </p>
 {% endfor %}
 
-<p><strong>Total:</strong>£{{ total }}</p>
+<p><strong>Total:</strong><span>&pound;</span>{{ total }}</p>
 
 <p>Your item will be shipped to you in the next 3-5 working days.</p>
 
