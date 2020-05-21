@@ -177,7 +177,7 @@
 
                 <form class="add-form" method="post" action="{% url 'add_to_cart' product.id %}">
                     {% csrf_token %}
-                    <input name="disabled" type="text" id="buyout-input-field" value="£{{ product.buyout_price }}" size="8" disabled> <button class="btn btn-sm artifact-btn" type="submit">Add to cart</button>
+                    <input name="disabled" style="font-weight: bold;" type="text" id="buyout-input-field" value="£{{ product.buyout_price }}" size="8" disabled> <button class="btn btn-sm artifact-btn" type="submit">Add to cart</button>
                 </form>
 
                 {% endif %}
