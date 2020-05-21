@@ -28,12 +28,6 @@ class BlogDetailView(DetailView):
     template_name = 'blog-detail.html'
     context_object_name = 'post'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        title = "Blog"
-        context["title"] = title
-        return context
-
 
 def add_comment_to_post(request, pk):
     """
