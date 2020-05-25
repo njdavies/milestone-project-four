@@ -582,6 +582,26 @@ a.account-links:hover {
     font-size: 0.75em;
 }
 
+.btn-outline-info {
+    color: black;
+    border-color: #6c757d !important;
+}
+
+.btn-outline-info:hover:focus:active {
+    background-color: #6c757d !important;
+    border-color: #6c757d !important;
+}
+
+.btn-info {
+    background-color: #6c757d !important;
+    border-color: #6c757d !important;
+}
+
+.btn-info:hover:focus:active {
+    background-color: #6c757d !important;
+    border-color: #6c757d !important;
+}
+
 /* Artifact page  */
 
 #artifact-section {
