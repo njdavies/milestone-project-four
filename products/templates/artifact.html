@@ -9,7 +9,7 @@
     <div class="container">
         {% if not user.is_authenticated %}
         <div class="alert alert-danger">
-            <p class="login-alert-message"><i class="fa fa-exclamation-circle fa-lg"></i>You'll need to <a href="{% url 'login' %}">log in</a> or <a href="{% url 'signup' %}">register</a> for free before
+            <p class="login-alert-message"><i class="fa fa-exclamation-circle fa-lg"></i>You'll need to <a href="{% url 'login' %}" class="account-links">log in</a> or <a href="{% url 'signup' %}" class="account-links">register</a> for free before
                 bidding/purchasing</p>
         </div>
         {% endif %}
@@ -60,7 +60,7 @@
                     </div>
 
                     <div>
-                        <small id="all-bids-logout"><a href="" data-toggle="modal" data-target="#bidsModal">See all bids</a></small>
+                        <small id="all-bids-logout"><a class="account-links" data-toggle="modal" data-target="#bidsModal">See all bids</a></small>
                     </div>
                     <!-- Bids Modal -->
                     <div class="modal" id="bidsModal">
@@ -142,7 +142,7 @@
                     <button type="submit" class="btn btn-sm artifact-btn">Place bid</button>
                 </form>
                 <div>
-                    <small id="all-bids-login"><a href="" data-toggle="modal" data-target="#bidsModal">See all bids</a></small>
+                    <small id="all-bids-login"><a data-toggle="modal" class="account-links" data-target="#bidsModal">See all bids</a></small>
                 </div>
 
                 <!-- Bids Modal -->

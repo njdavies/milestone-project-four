@@ -125,6 +125,10 @@ li {
     margin-top: 1.5em;
 }
 
+a.account-links:hover {
+    color: #007bff;
+}
+
 /* Cart page */
 
 .cart-section {
