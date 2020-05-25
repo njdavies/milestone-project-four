@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load humanize %}
 
 {% block content %}
 
@@ -8,7 +9,7 @@
     <div class="container">
         {% if not user.is_authenticated %}
         <div class="alert alert-danger">
-            <p class="login-alert-message"><i class="fa fa-exclamation-circle fa-lg"></i>You'll need to <a href="{% url 'login' %}">log in</a> or <a href="{% url 'signup' %}">register</a> for free before
+            <p class="login-alert-message"><i class="fa fa-exclamation-circle fa-lg"></i>You'll need to <a href="{% url 'login' %}" class="account-links">log in</a> or <a href="{% url 'signup' %}" class="account-links">register</a> for free before
                 bidding/purchasing</p>
         </div>
         {% endif %}
@@ -26,10 +27,10 @@
                 {% if not user.is_authenticated %}
                 <div>
                     {% if bid.current_bid__max >= product.starting_price %}
-                    <span id="artifact-bid-price-logout"><strong> Current Bid: </strong><span class="bid-value">£{{ bid.current_bid__max }}</span></span>
+                    <span id="artifact-bid-price-logout"><strong> Current Bid: </strong><span class="bid-value">£{{ bid.current_bid__max|intcomma }}</span></span>
                     <span> <a data-toggle="modal" data-target="#infoModal"><i class="fa fa-info-circle" aria-hidden="true"></i></a></span>
                     {% else %}
-                    <span id="artifact-bid-price-logout"><strong> Starting Price: </strong><span class="bid-value">£{{ product.starting_price }}</span></span>
+                    <span id="artifact-bid-price-logout"><strong> Starting Price: </strong><span class="bid-value">£{{ product.starting_price|intcomma }}</span></span>
                     <span> <a data-toggle="modal" data-target="#infoModal"><i class="fa fa-info-circle" aria-hidden="true"></i></a></span>
                     {% endif %}
 
@@ -59,7 +60,7 @@
                     </div>
 
                     <div>
-                        <small id="all-bids-logout"><a href="" data-toggle="modal" data-target="#bidsModal">See all bids</a></small>
+                        <small id="all-bids-logout"><a href="" class="account-links" data-toggle="modal" data-target="#bidsModal">See all bids</a></small>
                     </div>
                     <!-- Bids Modal -->
                     <div class="modal" id="bidsModal">
@@ -78,7 +79,7 @@
                                         <tbody>
                                             <tr>
                                                 <td>{{ bid.current_bid_user }}</td>
-                                                <td>{{ bid.current_bid }}</td>
+                                                <td>£{{ bid.current_bid|intcomma }}</td>
                                                 <td>{{ bid.current_bid_date }}</td>
                                             </tr>
                                         </tbody>
@@ -96,9 +97,9 @@
                 {% else %}
 
                 {% if bid.current_bid__max >= product.starting_price %}
-                <p id="artifact-bid-price-login"><strong> Current Bid: </strong><span class="bid-value">£{{ bid.current_bid__max|floatformat:2 }}</span></p>
+                <p id="artifact-bid-price-login"><strong> Current Bid: </strong><span class="bid-value">£{{ bid.current_bid__max|floatformat:2|intcomma }}</span></p>
                 {% else %}
-                <p id="artifact-bid-price-login"><strong> Starting Price: </strong><span class="bid-value">£{{ product.starting_price }}</span></p>
+                <p id="artifact-bid-price-login"><strong> Starting Price: </strong><span class="bid-value">£{{ product.starting_price|intcomma }}</span></p>
                 {% endif %}
 
                 <form class="bid-form" method="POST" action="{% url 'artifact' product.id %}">
@@ -141,7 +142,7 @@
                     <button type="submit" class="btn btn-sm artifact-btn">Place bid</button>
                 </form>
                 <div>
-                    <small id="all-bids-login"><a href="" data-toggle="modal" data-target="#bidsModal">See all bids</a></small>
+                    <small id="all-bids-login"><a href="" data-toggle="modal" class="account-links" data-target="#bidsModal">See all bids</a></small>
                 </div>
 
                 <!-- Bids Modal -->
@@ -161,7 +162,7 @@
                                     <tbody>
                                         <tr>
                                             <td>{{ bid.current_bid_user }}</td>
-                                            <td>{{ bid.current_bid }}</td>
+                                            <td>£{{ bid.current_bid|intcomma }}</td>
                                             <td>{{ bid.current_bid_date }}</td>
                                         </tr>
                                     </tbody>
@@ -177,7 +178,7 @@
 
                 <form class="add-form" method="post" action="{% url 'add_to_cart' product.id %}">
                     {% csrf_token %}
-                    <input name="disabled" style="font-weight: bold;" type="text" id="buyout-input-field" value="£{{ product.buyout_price }}" size="8" disabled> <button class="btn btn-sm artifact-btn" type="submit">Add to cart</button>
+                    <input name="disabled" style="font-weight: bold;" type="text" id="buyout-input-field" value="£{{ product.buyout_price|intcomma }}" size="8" disabled> <button class="btn btn-sm artifact-btn" type="submit">Add to cart</button>
                 </form>
 
                 {% endif %}
@@ -185,7 +186,7 @@
                 <h2 class="description-header">Description</h2>
                 <p class="artifact-info"><strong>Era: </strong>{{ product.era }}</p>
                 <p class="artifact-info"><strong>Age: </strong>{{ product.age }}</p>
-                <p class="artifact-info"><strong>Starting Price: </strong>£{{ product.starting_price }}</p>
+                <p class="artifact-info"><strong>Starting Price: </strong>£{{ product.starting_price|intcomma }}</p>
                 <p class="artifact-info"><strong>End Date: </strong>{{ product.end_date }}</p>
 
             </div>

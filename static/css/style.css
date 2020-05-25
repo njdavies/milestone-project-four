@@ -125,6 +125,10 @@ li {
     margin-top: 1.5em;
 }
 
+a.account-links:hover {
+    color: #007bff;
+}
+
 /* Cart page */
 
 .cart-section {
@@ -576,6 +580,26 @@ li {
 
 .center a {
     font-size: 0.75em;
+}
+
+.btn-outline-info {
+    color: black;
+    border-color: #6c757d !important;
+}
+
+.btn-outline-info:hover:focus:active {
+    background-color: #6c757d !important;
+    border-color: #6c757d !important;
+}
+
+.btn-info {
+    background-color: #6c757d !important;
+    border-color: #6c757d !important;
+}
+
+.btn-info:hover:focus:active {
+    background-color: #6c757d !important;
+    border-color: #6c757d !important;
 }
 
 /* Artifact page  */
