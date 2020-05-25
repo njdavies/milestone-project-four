@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load humanize %}
 
 {% block content %}
 <section class="cart-section">
@@ -14,7 +15,7 @@
             <div class="col-7 col-md-6 cart-content-wrapper">
                 <h2 class="cart-lot-header">{{ item.product.name }}</h2>
                 <p class="cart-lot-text">
-                    <span class="bid-value"> £{{ item.product.buyout_price }}</span>
+                    <span class="bid-value"> £{{ item.product.buyout_price|intcomma }}</span>
                 </p>
 
                 <form class="add-form" method="post" action="{% url 'remove_from_cart' item.product.id %}">
@@ -32,7 +33,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <p class="total-header text-right"> Total: <span class="bid-value">£{{ total }}</span> </p>
+                <p class="total-header text-right"> Total: <span class="bid-value">£{{ total|intcomma }}</span> </p>
             </div>
         </div>
     </div>

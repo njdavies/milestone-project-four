@@ -1,4 +1,5 @@
 <!-- The HTML template used to send an email confirmation once a bid has been received -->
+{% load humanize %}
 
 <p>Hi {{ user }},</p>
 
@@ -9,7 +10,7 @@
 <p>
     <strong>Item:</strong> {{ product.name }}<br>
     <strong>Auction End Date:</strong> {{ product.end_date }}<br>
-    <strong>Bid:</strong> <span>&pound;</span>{{ new_bid.current_bid|floatformat:2 }}
+    <strong>Bid:</strong> <span>&pound;</span>{{ new_bid.current_bid|floatformat:2|intcomma }}
 </p>
 
 <p>Please check the lot regularly to ensure you have the best chance of winning the auction.</p>

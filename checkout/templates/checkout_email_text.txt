@@ -7,6 +7,8 @@ Order Summary:
 Item:{{ product.name }}
 Price:£{{ product.buyout_price }}
 
+Total:£{{ total }}
+
 Your item will be shipped to you in the next 3-5 working days.
 
 Sincerely,

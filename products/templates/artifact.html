@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load humanize %}
 
 {% block content %}
 
@@ -26,10 +27,10 @@
                 {% if not user.is_authenticated %}
                 <div>
                     {% if bid.current_bid__max >= product.starting_price %}
-                    <span id="artifact-bid-price-logout"><strong> Current Bid: </strong><span class="bid-value">£{{ bid.current_bid__max }}</span></span>
+                    <span id="artifact-bid-price-logout"><strong> Current Bid: </strong><span class="bid-value">£{{ bid.current_bid__max|floatformat:2|intcomma }}</span></span>
                     <span> <a data-toggle="modal" data-target="#infoModal"><i class="fa fa-info-circle" aria-hidden="true"></i></a></span>
                     {% else %}
-                    <span id="artifact-bid-price-logout"><strong> Starting Price: </strong><span class="bid-value">£{{ product.starting_price }}</span></span>
+                    <span id="artifact-bid-price-logout"><strong> Starting Price: </strong><span class="bid-value">£{{ product.starting_price|intcomma }}</span></span>
                     <span> <a data-toggle="modal" data-target="#infoModal"><i class="fa fa-info-circle" aria-hidden="true"></i></a></span>
                     {% endif %}
 
@@ -78,7 +79,7 @@
                                         <tbody>
                                             <tr>
                                                 <td>{{ bid.current_bid_user }}</td>
-                                                <td>{{ bid.current_bid }}</td>
+                                                <td>£{{ bid.current_bid|intcomma }}</td>
                                                 <td>{{ bid.current_bid_date }}</td>
                                             </tr>
                                         </tbody>
@@ -96,9 +97,9 @@
                 {% else %}
 
                 {% if bid.current_bid__max >= product.starting_price %}
-                <p id="artifact-bid-price-login"><strong> Current Bid: </strong><span class="bid-value">£{{ bid.current_bid__max|floatformat:2 }}</span></p>
+                <p id="artifact-bid-price-login"><strong> Current Bid: </strong><span class="bid-value">£{{ bid.current_bid__max|floatformat:2|intcomma }}</span></p>
                 {% else %}
-                <p id="artifact-bid-price-login"><strong> Starting Price: </strong><span class="bid-value">£{{ product.starting_price }}</span></p>
+                <p id="artifact-bid-price-login"><strong> Starting Price: </strong><span class="bid-value">£{{ product.starting_price|intcomma }}</span></p>
                 {% endif %}
 
                 <form class="bid-form" method="POST" action="{% url 'artifact' product.id %}">
@@ -133,9 +134,9 @@
                     <!-- Form validation to only allow bids that are a minimum of either £1 higher than the previous bid or equal to the Starting Price, and less than 
                     the maximum bid allowed, which is £300,000.00-->
                     {% if not bid.current_bid__max  %}
-                    <input type="number" name="bid" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="9" id="bid-input-field" min="{{ product.starting_price|floatformat:2 }}" max="300000" style="width:6em" required>
+                    <input type="number" name="bid" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="9" id="bid-input-field" min="{{ product.starting_price|intcomma|floatformat:2 }}" max="300000" style="width:6em" required>
                     {% else %}
-                    <input type="number" name="bid" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="9" id="bid-input-field" min="{{ bid.current_bid__max|add:'1' }}" max="300000" style="width:6em" required>
+                    <input type="number" name="bid" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="9" id="bid-input-field" min="{{ bid.current_bid__max|intcomma|add:'1' }}" max="300000" style="width:6em" required>
                     {% endif %}
 
                     <button type="submit" class="btn btn-sm artifact-btn">Place bid</button>
@@ -161,7 +162,7 @@
                                     <tbody>
                                         <tr>
                                             <td>{{ bid.current_bid_user }}</td>
-                                            <td>{{ bid.current_bid }}</td>
+                                            <td>£{{ bid.current_bid|intcomma }}</td>
                                             <td>{{ bid.current_bid_date }}</td>
                                         </tr>
                                     </tbody>
@@ -177,7 +178,7 @@
 
                 <form class="add-form" method="post" action="{% url 'add_to_cart' product.id %}">
                     {% csrf_token %}
-                    <input name="disabled" type="text" id="buyout-input-field" value="£{{ product.buyout_price }}" size="8" disabled> <button class="btn btn-sm artifact-btn" type="submit">Add to cart</button>
+                    <input name="disabled" style="font-weight: bold;" type="text" id="buyout-input-field" value="£{{ product.buyout_price|intcomma }}" size="8" disabled> <button class="btn btn-sm artifact-btn" type="submit">Add to cart</button>
                 </form>
 
                 {% endif %}
@@ -185,7 +186,7 @@
                 <h2 class="description-header">Description</h2>
                 <p class="artifact-info"><strong>Era: </strong>{{ product.era }}</p>
                 <p class="artifact-info"><strong>Age: </strong>{{ product.age }}</p>
-                <p class="artifact-info"><strong>Starting Price: </strong>£{{ product.starting_price }}</p>
+                <p class="artifact-info"><strong>Starting Price: </strong>£{{ product.starting_price|intcomma }}</p>
                 <p class="artifact-info"><strong>End Date: </strong>{{ product.end_date }}</p>
 
             </div>
