@@ -661,11 +661,11 @@ a.account-links:hover {
     display: block;
 }
 
-.list-spacing {
-    padding-left: 1em !important;
+.info-list {
+    padding-left: 1em;
 }
 
-.modal-list {
+.info-list li {
     list-style-type: disc !important;
     list-style: outside;
     text-align: left;
