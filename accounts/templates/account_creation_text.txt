@@ -1,0 +1,13 @@
+Hi {{ user }},
+
+Welcome to Artifact Auctioneers!
+
+You will now be able to bid on or purchase items from our extensive list of artifacts, procured from around the world.
+
+Be sure to check out our blog (https://ecommerce-msp4.herokuapp.com/blog/) for all the latest news on what our archeology team have been up to.
+
+If you have any queries please contact us - https://ecommerce-msp4.herokuapp.com/contact/
+
+Sincerely,
+
+The Artifact Auctioneers Team
