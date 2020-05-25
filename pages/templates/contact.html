@@ -27,7 +27,7 @@
         </div>
         <div class="row">
             <div class="col-md-8">
-                <form id="contactForm" action="https://ecommerce-msp4.herokuapp.com/contact/#top">
+                <form id="contactForm">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -107,6 +107,7 @@
                     });
                 $("#contactForm").trigger('reset');
                 $("#contact-message-alert").show();
+                window.scrollTo(0, 0);
             });
     }
 </script>
