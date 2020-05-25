@@ -2,10 +2,19 @@ from django.db import models
 from products.models import Product
 
 
+COUNTRY_CHOICES = [
+    ('united kingdom', 'United Kingdom'),
+    ('united states', 'United States'),
+    ('france', 'France'),
+    ('germany', 'Germany'),
+]
+
+
 class Order(models.Model):
     full_name = models.CharField(max_length=50, blank=False)
     phone_number = models.CharField(max_length=20, blank=False)
-    country = models.CharField(max_length=40, blank=False)
+    country = models.CharField(
+        max_length=40, blank=False, choices=COUNTRY_CHOICES)
     postcode = models.CharField(max_length=20, blank=False)
     town_or_city = models.CharField(max_length=40, blank=False)
     street_address1 = models.CharField(max_length=40, blank=False)
