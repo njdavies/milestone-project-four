@@ -16,7 +16,16 @@
 
 <p><strong>Total:</strong> <span>&pound;</span>{{ total|intcomma }}</p>
 
-<p>Your item will be shipped to you in the next 3-5 working days.</p>
+<p>Your item will be shipped to the following address in the next 3-5 working days:</p>
+
+{{ address.street_address1 }}<br>
+{{ address.street_address2 }}<br>
+{{ address.town_or_city }}<br>
+{{ address.county }}<br>
+{{ address.postcode }}<br>
+{{ address.country|title }}<br><br>
+
+If you have any queries regarding this order please <a href="https://ecommerce-msp4.herokuapp.com/contact/">contact us.</a>
 
 <p>Sincerely,</p>
 

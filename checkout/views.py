@@ -27,6 +27,7 @@ def checkout(request):
             order = order_form.save(commit=False)
             order.date = timezone.now()
             order.save()
+            address = order
 
             cart = request.session.get('cart', {})
             total = 0
@@ -62,14 +63,13 @@ def checkout(request):
                 # A Confirmation email is sent the user once payment has been made
                 user = request.user
                 email = request.user.email
-                total = total
 
                 subject, from_email, to = 'Payment confirmation', 'admin@artifactauctioneers.com', '{}'.format(
                     email)
                 text_content = render_to_string(
-                    'checkout_email_text.txt', {'user': user, 'products': products, 'total': total})
+                    'checkout_email_text.txt', {'user': user, 'products': products, 'address': address, 'total': total})
                 html_content = render_to_string(
-                    'checkout_email.html', {'user': user, 'products': products, 'total': total})
+                    'checkout_email.html', {'user': user, 'products': products, 'address': address, 'total': total})
                 msg = EmailMultiAlternatives(
                     subject, text_content, from_email, [to])
                 msg.attach_alternative(html_content, "text/html")

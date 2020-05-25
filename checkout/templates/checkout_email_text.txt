@@ -9,7 +9,16 @@ Price:£{{ product.buyout_price }}
 
 Total:£{{ total }}
 
-Your item will be shipped to you in the next 3-5 working days.
+Your item will be shipped to the following address in the next 3-5 working days:
+
+{{ address.street_address1 }}
+{{ address.street_address2 }}
+{{ address.town_or_city }}
+{{ address.county }}
+{{ address.postcode }}
+{{ address.country|title }}
+
+If you have any queries regarding this order please contact us - https://ecommerce-msp4.herokuapp.com/contact/
 
 Sincerely,
 
