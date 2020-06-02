@@ -1,0 +1,9 @@
+A contact form has been submitted with the following information:
+
+User : {{ user }}
+
+Email : {{ email }}
+
+Subject : {{ title }}
+
+Message : {{ message }}

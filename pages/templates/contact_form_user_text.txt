@@ -1,0 +1,14 @@
+Hi {{ user }},
+
+Thank you for contacting us.
+
+Your Query:
+
+Subject: {{ title }}
+Message : {{ message }}
+
+Our team will respond within 24 hours.
+
+Sincerely,
+
+The Artifact Auctioneers Team
