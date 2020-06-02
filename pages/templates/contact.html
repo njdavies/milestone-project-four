@@ -16,18 +16,9 @@
     </div>
     <div class="container contact-us-wrapper">
         <div class="row">
-            <div class="container">
-                <div class="alert alert-success collapse alert-dismissible" id="contact-message-alert" role="alert">
-                    Thank you for your query! Our team will be in touch shortly.</h2>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="row">
             <div class="col-md-8">
-                <form id="contactForm">
+                <form id="contactForm" method='POST' action="{% url 'contact_form' %}">
+                    {% csrf_token %}
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -35,7 +26,7 @@
                                 <div class="input-group-btn">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fa fa-user fa-user-contact text-info"></i></span>
-                                        <input type="text" class="form-control" name="name" placeholder="Enter name" required="required" />
+                                        <input name="name" type="text" class="form-control" placeholder="Enter name" required="required" />
                                     </div>
                                 </div>
                             </div>
@@ -44,18 +35,18 @@
                                 <div class="input-group-btn">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fa fa-envelope text-info"></i></span>
-                                        <input type="email" class="form-control" name="email" placeholder="Enter email" required="required" />
+                                        <input name="email" type="email" class="form-control" placeholder="Enter email" required="required" />
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="subject">Subject</label>
+                                <label for="Subject">Subject</label>
                                 <select id="subject" name="subject" class="form-control" required="required">
                                     <option value="na" selected="">Choose One:</option>
                                     <option value="Artifacts">Artifacts</option>
                                     <option value="Billing">Bidding Process</option>
                                     <option value="Suggestions">Suggestions</option>
-                                    <option value="General">General Customer Service Query</option>
+                                    <option value="General">General Query</option>
                                 </select>
                             </div>
                         </div>
@@ -93,22 +84,4 @@
         </div>
     </div>
 </section>
-<!-- Script to send email to site admin once contact form has been submitted -->
-<script>
-    window.onload = function () {
-        document.getElementById('contactForm')
-            .addEventListener('submit', function (event) {
-                event.preventDefault();
-                emailjs.sendForm('gmail', 'ecommerce', event.target)
-                    .then(function (response) {
-                        console.log('SUCCESS!', response.status, response.text);
-                    }, function (error) {
-                        console.log('FAILED...', error);
-                    });
-                $("#contactForm").trigger('reset');
-                $("#contact-message-alert").show();
-                window.scrollTo(0, 0);
-            });
-    }
-</script>
 {% endblock content  %}
