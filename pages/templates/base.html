@@ -31,7 +31,7 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link" id="nav-link-home" href="{% url 'home' %}">Home</a>
+                    <a class="nav-link" id="nav-item-home" href="{% url 'home' %}">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-padding" href="{% url 'era-list' 'Egyptian' %}">Egyptian Artifacts</a>
@@ -47,19 +47,15 @@
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
-                <form action="{% url 'search' %}" method="GET" class="form-inline">
-                    <button class="search-button" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                    <input class="form-control ml-2 w-75" id="searchbox-text" type="text" name="q" value='{{ request.GET.q }}' placeholder="Search Artifacts" aria-label="Search" />
-                </form>
+
+                <li class="nav-item" id=nav-item-search>
+                    <form action="{% url 'search' %}" method="GET" class="form-inline">
+                        <button class="search-button" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        <input class="form-control ml-2" id="searchbox-text" type="text" name="q" value='{{ request.GET.q }}' placeholder="Search Artifacts" aria-label="Search" />
+                    </form>
+                </li>
+
                 {% if user.is_authenticated %}
-                <li class="nav-item nav-item-user">
-                    <a class="nav-link" href="{% url 'logout' %}"><i class="fa fa-user fa-1.5x"></i>Log Out</a>
-                </li>
-                {% else %}
-                <li class="nav-item nav-item-user">
-                    <a class="nav-link" href="{% url 'login' %}"><i class="fa fa-user fa-1.5x"></i>Log In</a>
-                </li>
-                {% endif %}
                 <li class="nav-item" id="nav-item-cart">
                     <a class="nav-link" href="{% url 'view_cart' %}"><i class="fa fa-shopping-cart fa-1.5x"></i>Cart
                         {% if product_count > 0 %}
@@ -67,6 +63,17 @@
                         {% endif %}
                     </a>
                 </li>
+                <li class="nav-item" id="nav-item-logout">
+                    <a class="nav-link" href="{% url 'logout' %}"><i class="fa fa-user fa-1.5x"></i>Log Out</a>
+                </li>
+                {% else %}
+                <li class="nav-item" id="nav-item-login">
+                    <a class="nav-link" href="{% url 'login' %}"><i class="fa fa-user fa-1.5x"></i>Log In</a>
+                </li>
+                <li class="nav-item" id="nav-item-register">
+                    <a class="nav-link" href="http://127.0.0.1:8000/accounts/signup/"><i class="fa fa-user-plus fa-1.5x"></i>Register</a>
+                </li>
+                {% endif %}
             </ul>
         </div>
     </nav>
@@ -134,14 +141,6 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <!-- Contact Form Email scripts -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js">
-    </script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init("user_J2nBvy8n17ECBQkQsordL");
-        })();
-    </script>
 
     <!-- Stripe Javascript -->
     {% block head_js %}
