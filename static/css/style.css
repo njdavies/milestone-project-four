@@ -39,9 +39,14 @@ html {
 #searchbox-text {
     height: 2em;
     margin-top: 0.5em;
+    width: 50%;
 }
 
 .fa-user {
+    padding-right: 0.3em;
+}
+
+.fa-user-plus {
     padding-right: 0.3em;
 }
 
@@ -540,7 +545,7 @@ a.account-links:hover {
 
 .lot-text p {
     font-size: 0.7em;
-    padding-left: 0.75sem;
+    padding-left: 0.75em;
     margin-bottom: 0;
     padding-bottom: 0;
 }
@@ -610,7 +615,7 @@ a.account-links:hover {
 
 .alert-danger {
     margin-top: 1em;
-    font-size: 0.75;
+    font-size: 0.75em;
     text-align: center;
 }
 
@@ -920,50 +925,52 @@ label {
 
     .navbar-brand {
         font-size: 1em;
-        margin-right: 0;
+        margin-top: 0.40em;
+        margin-right: 0em;
         padding-bottom: 0.9em;
     }
 
-    #nav-link-home {
-        margin-right: 2em;
+    #nav-item-home {
+        margin-right: 1em;
         margin-left: 2em;
     }
 
     .nav-item {
-        font-size: 0.6em;
+        font-size: 0.4em;
         padding-right: 0.2em;
     }
 
-    .nav-link {
-        padding-right: 0.5em !important;
+    #nav-item-search {
+        margin-top: 0.75em;
+        font-size: 1em;
     }
 
     .fa-search {
         font-size: 0.75em;
+        margin-bottom: 1.258em;
     }
 
     #searchbox-text {
-        margin-top: 0;
-        font-size: 0.6em;
+        margin-top: 0em;
+        margin-bottom: 1em;
+        font-size: 0.5em;
+        width: 65%;
     }
 
-    .nav-item-user {
-        margin-left: 0.25em;
-        padding-left: 1em;
+    #nav-item-login {
+        margin-top: 1.6em;
     }
 
-    .nav-item-cart {
-        padding-left: 0.5em;
+    #nav-item-register {
+        margin-top: 1.6em;
     }
 
-    .fa-user {
-        padding-right: 3em;
-        padding-bottom: 0.05em;
+    #nav-item-cart {
+        margin-top: 1.6em;
     }
 
-    .fa-shopping-cart {
-        padding-right: 3em;
-        padding-bottom: 0.05em;
+    #nav-item-logout {
+        margin-top: 1.6em;
     }
 
     #site-tagline {
@@ -1173,7 +1180,7 @@ label {
     }
 }
 
-@media (min-width: 1024px) and (max-width: 1366px) {
+@media (min-width: 1024px) {
     /* Home Page  */
 
     .navbar-brand {
@@ -1183,12 +1190,16 @@ label {
     }
 
     .nav-item {
-        font-size: 0.75em;
-        padding-right: 0.1em;
+        font-size: 0.5em;
+        padding-right: 1em;
+    }
+
+    #nav-item-home {
+        margin-right: 1em;
     }
 
     #nav-item-end {
-        padding-right: 0em;
+        padding-right: 1.25em;
     }
 
     .form-inline {
@@ -1200,25 +1211,21 @@ label {
         width: 70%;
     }
 
+    .fa-search {
+        margin-bottom: 1.75em;
+    }
+
     #searchbox-text {
         font-size: 0.75em;
+        width: 67%;
     }
 
-    .fa-user {
-        padding-right: 4em;
+    #nav-item-login {
+        margin-top: 1.5em;
     }
 
-    .fa-shopping-cart {
-        padding-right: 4em;
-    }
-
-    .nav-item-user {
-        padding-left: 0.5em;
-        padding-right: 0.5em;
-    }
-
-    #nav-item-cart {
-        padding-right: 0.5em;
+    #nav-item-register {
+        margin-top: 1.5em;
     }
 
     #site-tagline {
@@ -1226,7 +1233,7 @@ label {
     }
 
     .footer-link {
-        font-size: 0.75em !important;
+        font-size: 0.5em !important;
     }
 
     /* Account Pages */
@@ -1340,6 +1347,18 @@ label {
     }
 }
 
+@media (min-width: 1367px) and (max-width: 1727px) {
+
+    .nav-item {
+        font-size: 0.65em !important;
+    }
+
+    #searchbox-text {
+        width: 65% !important;
+    }
+
+}
+
 @media (min-width: 1367px) {
     /* Home Page */
 
@@ -1348,19 +1367,20 @@ label {
     }
 
     .navbar-brand {
-        font-size: 2em;
+        font-size: 1.50em;
         margin-right: 0.5em;
-        padding-bottom: 0;
+        padding-bottom: 0.5em;
     }
 
-    #nav-link-home {
+    #nav-item-home {
         margin-right: 0.25em;
         margin-left: 1em;
     }
 
     .nav-item {
-        font-size: 1.2em;
-        padding-right: 1em;
+        font-size: 1em;
+        padding-right: 1.85em;
+        padding-left: 1em;
     }
 
     .nav-padding {
@@ -1377,16 +1397,31 @@ label {
     }
 
     .fa-search {
+        margin-top: 0.85em;
         font-size: 1.25em !important;
     }
 
     #searchbox-text {
-        height: 1.75em;
-        font-size: 1.2em;
+        margin-top: 0.30em;
+        height: 1.65em;
+        font-size: 1em;
+        width: 84%;
     }
 
-    .fa-user {
-        padding-right: 0.5em;
+    #nav-item-login {
+        margin-top: 1.25em;
+    }
+
+    #nav-item-register {
+        margin-top: 1.25em;
+    }
+
+    #nav-item-cart {
+        margin-top: 1.25em;
+    }
+
+    #nav-item-logout {
+        margin-top: 1.25em;
     }
 
     #site-tagline {
@@ -1394,7 +1429,7 @@ label {
     }
 
     .footer-link {
-        font-size: 1.2em !important;
+        font-size: 1em !important;
     }
 
     /* Account Pages */
