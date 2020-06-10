@@ -1281,7 +1281,7 @@ label {
     /* Blog Page */
 
     #blog-section {
-        height: 100vh;
+        min-height: 100vh;
     }
 
     .blog-title {
@@ -1294,7 +1294,7 @@ label {
 
     /* Blog Comment page  */
     #blog-post-section {
-        height: 83vh;
+        min-height: 83vh;
     }
 
     /* Products Page */
