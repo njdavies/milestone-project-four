@@ -110,9 +110,9 @@
                     <!-- Form validation to only allow bids that are a minimum of either £1 higher than the previous bid or equal to the Starting Price, and less than 
                     the maximum bid allowed, which is £300,000.00-->
                     {% if not bid.current_bid__max  %}
-                    <input type="number" name="bid" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="9" id="bid-input-field" min="{{ product.starting_price|intcomma|floatformat:2 }}" max="300000" style="width:6em" required>
+                    <input type="number" name="bid" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="9" id="bid-input-field" min="{{ product.starting_price }}" max="300000" style="width:6em" required>
                     {% else %}
-                    <input type="number" name="bid" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="9" id="bid-input-field" min="{{ bid.current_bid__max|intcomma|add:'1' }}" max="300000" style="width:6em" required>
+                    <input type="number" name="bid" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="9" id="bid-input-field" min="{{ bid.current_bid__max|add:'1' }}" max="300000" style="width:6em" required>
                     {% endif %}
 
                     <button type="submit" class="btn btn-sm artifact-btn">Place bid</button>
