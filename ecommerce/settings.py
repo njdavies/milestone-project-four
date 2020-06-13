@@ -33,6 +33,14 @@ ALLOWED_HOSTS = ['https://ecommerce-msp4.herokuapp.com/']
 
 INSTALLED_APPS = [
 
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'django.contrib.humanize',
+
     # Local apps
     'pages.apps.PagesConfig',
     'accounts.apps.AccountsConfig',
@@ -45,14 +53,6 @@ INSTALLED_APPS = [
     # 3rd Party apps
     'crispy_forms',
     'storages',
-
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'django.contrib.humanize',
 ]
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
