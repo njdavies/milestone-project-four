@@ -28,6 +28,9 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['https://ecommerce-msp4.herokuapp.com/']
 
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 # Application definition
 
