@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.com/njdavies/milestone-project-four.svg?branch=master)](https://travis-ci.com/njdavies/milestone-project-four)
 
-# Artifact Auctioneers - [Website Link](https://ecommerce-msp4.herokuapp.com/)
+# Artifact Auctioneers - [Website Link](https://ecommerce-ms4.onrender.com)
 
 Artifact Auctioneers is an online auction site where users can find, learn about and acquire artifacts from ancient history.
 
@@ -15,40 +15,37 @@ The company's archeologists scour the globe for artifacts and then present them 
 I began development of this site by putting together user stories. This allowed me to break down each story into a specific feature that would be required within the website. It also served as a way to separate functionality into different apps.
 
 - As a user browsing the site I want to be able to:
-    - Find out more information about the company so that I can determine if they are a reputable brand
-    - View the latest news on artifact finds from around the world
-    - Contact the company should I have a query
-    - Access the company's social media should I wish to follow them
+
+  - Find out more information about the company so that I can determine if they are a reputable brand
+  - View the latest news on artifact finds from around the world
+  - Contact the company should I have a query
+  - Access the company's social media should I wish to follow them
 
 - As a user browsing the store I want to be able to:
-    - View a list of all artifacts available to be bid on or bought
-    - Filter the list of all artifacts available by auction end date or buyout price
-    - View a list of specific artifacts based on the era they came from
-    - Search for an artifact in the store
-    - Select an artifact and view additional information about it
-    - Bid on an item in the store and receive confirmation of this via email
-    - Purchase an item immediately
+
+  - View a list of all artifacts available to be bid on or bought
+  - Filter the list of all artifacts available by auction end date or buyout price
+  - View a list of specific artifacts based on the era they came from
+  - Search for an artifact in the store
+  - Select an artifact and view additional information about it
+  - Bid on an item in the store and receive confirmation of this via email
+  - Purchase an item immediately
 
 - As a user who has added an item to their cart I want to:
-    - View the cart to see the items I am about to purchase
-    - Remove items from my cart as appropriate
-    - Proceed to a checkout page where I can provide my credit card info and shipping information
-    - Receive a confirmation via email once the payment has been processed
-
+  - View the cart to see the items I am about to purchase
+  - Remove items from my cart as appropriate
+  - Proceed to a checkout page where I can provide my credit card info and shipping information
+  - Receive a confirmation via email once the payment has been processed
 
 ### Mock Ups
 
-The following [mock ups](https://github.com/njdavies/milestone-project-four/tree/master/docs) were put together to allow me to plan out the content and functionality on each page of the site, taking into account the user stories I had put together. 
-
+The following [mock ups](https://github.com/njdavies/milestone-project-four/tree/master/docs) were put together to allow me to plan out the content and functionality on each page of the site, taking into account the user stories I had put together.
 
 ### Schema
 
 I then designed a database schema for the various models that would be required within the site. This includes the relationships between the various models
 
-
 ![Image of Database Schema](docs/Schema.png)
-
-
 
 ### Theme
 
@@ -56,7 +53,7 @@ I used a dark colour pallette, comprising mainly of black and shades of grey. Th
 
 The image used on the home page was particularly important to get right, as I wanted something familiar that immediately captured the eye of any visitor. The colours in the image enabled me to use shades of purple for the various buttons and other icons used in the site, as they compliment eachother well. Also of note here is the call to the action button placed in the middle of the image, which immediately takes the user to the store and full listing of all artifacts available, guiding them to the site's goal conversion.
 
-Overall, the site is designed to be as aesthetically pleasing as possible, with the least amount of visual clutter. The store in particular makes heavy use of white backgrounds and spacing, which allows the images of the artifacts and key pricing information to pop out. 
+Overall, the site is designed to be as aesthetically pleasing as possible, with the least amount of visual clutter. The store in particular makes heavy use of white backgrounds and spacing, which allows the images of the artifacts and key pricing information to pop out.
 
 ---
 
@@ -70,19 +67,18 @@ Overall, the site is designed to be as aesthetically pleasing as possible, with 
 - Contact Page - Provides company contact information and allows a user to complete a form with a query and submit this. A confirmation email is sent to the user which confirms their query details and advises a turnaround time on the response.
 - Blog - This provides news stories on the latest finds by the company's archeologists. It also allows any visitor to the site to add comments to the stories.
 - User Authentication - Full registration/login/logout functionality is provided, along with a password reset option. Confirmation emails are sent to the user when an account is created or their password reset. It is made clear to the user on the landing and artifact pages that an account is required in order to bid on or purchase any item in the store.
-- Links to the company's various social media offerings are provided 
-- Products Page - This lists all items available in the store and can be sorted to show items by their auction end date or buyout price. 
+- Links to the company's various social media offerings are provided
+- Products Page - This lists all items available in the store and can be sorted to show items by their auction end date or buyout price.
 - Era Pages - The artifacts in the store are filtered into their respective eras and shown in their own pages. This allows users only interested in artifacts from a particular era to quickly view the items available.
-- Artifact Page - Each artifact has their own page which provides a description and brief history on their past. 
+- Artifact Page - Each artifact has their own page which provides a description and brief history on their past.
 - Bid functionality - Each artifact with an open auction can be bid on by registered users. The bid process is explained by clicking on an information button next to the starting price/current bid. There is also an option to view all bids made. Once a bid is received a confirmation email is sent to the user.
 - Buyout functionality - Each artifact can be purchased immediately at the buyout price set. This adds the item to the user's cart.
 - Cart Page - The user can view their cart, remove an item and see the total of all items being bought.
 - Checkout Page - Provides a form for the user to input shipping/credit card info. A confirmation email is sent to the user once the card details have been accepted.
 
-
 ### Features I would like to have implemented
 
-- Item status automation - It would be more efficient if the status of an item automatically changed to closed once the end date of the auction is reached. Currently, this has to be done manually in the admin site. I did investigate how to achieve this through the use of properties, but unfortunately was unable to get it working within the initial development timeframe. 
+- Item status automation - It would be more efficient if the status of an item automatically changed to closed once the end date of the auction is reached. Currently, this has to be done manually in the admin site. I did investigate how to achieve this through the use of properties, but unfortunately was unable to get it working within the initial development timeframe.
 - In addition to the above, it would also be helpful if once the end of an auction has been reached, a confirmation email is sent to the winner along with information on how to provide their shipping/credit card information. Currently this would also need to be done manually.
 - Another useful feature to add would be an order history page that a user could bring up to view all bids they have made and items purchased.
 
@@ -129,7 +125,6 @@ For a nice presentation of this information, use the following command to get an
 
 A folder called htmlcov is then created in your file directory. Open the index.html file within this folder and run it to see the more visually pleasing report. From there you are able to click on any file within each app and are taken directly to code which is not covered by tests.
 
-
 I also made use of the following automated tools:
 
 [W3C Markup Validation Service](https://validator.w3.org/) - I used this tool to validate the HTML used within the website. To do this I pasted the website URL (https://ecommerce-msp4.herokuapp.com/) into the address field and hit Check. It will then advise you of any errors within your code and make suggestions regarding how to keep this as correct as possible against the W3C standards.
@@ -146,15 +141,18 @@ this I first selected the 'By direct input' tab and then pasted the entire CSS c
 I tested the User Stories I had put together by conducting the following scenarios:
 
 - Home Page
+
   - Select each link in the header and footer and check that the appropriate page is displayed
   - Select the call to action button and check that the products page is displayed
   - Select the 'Sign up now' link and check that the appropriate page is displayed
 
 - Search bar
+
   - Enter the word 'mask' into the search bar and check that a page is displayed with two items listed
   - Enter the word 'egg' into the search bar and check that a page is displayed that confirms 'No artifacts found'
 
 - Account authentication
+
   - Attempt to sign up for an account without completing all fields and check that a prompt appears for the missing information
   - Sign up for an account by completing the registration form in full and check that a success message is displayed
   - Check that a confirmation email is received once sign up complete
@@ -164,45 +162,54 @@ I tested the User Stories I had put together by conducting the following scenari
   - Check that you are able to log in with the updated password
 
 - About Us Page
+
   - Check that the page renders correctly
 
 - Contact form
+
   - Attempt to submit a form without completing all fields and check that a prompt appears for the missing information
-  - Submit a form by completing all fields in full and check that a success message is displayed 
+  - Submit a form by completing all fields in full and check that a success message is displayed
   - Check that a confirmation email is received with details of the query submitted
 
 - Blog Page
+
   - Check that each of the three news stories can be selected and additional information displayed
   - Add a comment to a news story and check that this is displayed correctly
   - Check that you are able to go back to the blog main page by selecting the appropriate button
 
 - Products Page
+
   - Check that this page displays a paginated list (four items per page) of all artifacts in the store
   - Check that the page you are on is highlighted correctly at the bottom
   - Select both sorting filters are check that these work correctly
   - Select each item in the store and check that this takes you to their specific artifact page
 
 - Era pages
+
   - Check each era page and confirm that they correctly display only a list of artifacts on the store from that era
 
 - Artifact Page
-  - When not logged in or no account set up check that a warning message is displayed which advises the user they will need to register before bidding/buying 
+
+  - When not logged in or no account set up check that a warning message is displayed which advises the user they will need to register before bidding/buying
   - Select the 'See all bids' link and check that a list is displayed of all bids made, if any
   - Check that when logged in no warning message appears as per first point
   - Select the information icon and check that an information modal opens up with details on the bidding/buyout process
 
 - Bidding functionality
+
   - Attempt to bid without entering any amount and check that a prompt appears for the missing information
   - Attempt to enter non numerical values and check that this is not permitted
   - Attempt to enter a value lower than the starting price/current bid value and check that a prompt appears with information provided as to the minimum value allowed
   - Attempt to enter a value higher than the maximum allowable bid (£300,000.00) and check that a prompt appears which confirms the highest value possible
 
-- Buyout functionality 
+- Buyout functionality
+
   - Add an item to the cart by selecting the button, check that the cart icon in the header of the page updates accordingly and that a success message appears.
   - Add another item to the cart and check that the counter updates accordingly
 
 - Cart Page
-  - Check that any items added to the cart are displayed 
+
+  - Check that any items added to the cart are displayed
   - Remove an item from the cart and check that it updates accordingly and a success message is displayed
   - Check that the total figure is correct
 
@@ -217,7 +224,6 @@ I tested the User Stories I had put together by conducting the following scenari
   - Submit the payment, check that the cart empties, a success message is displayed and a confirmation email received which confirms the items purchased and shipping details provided by the user
   - Check that the item/s bought no longer show on the products page
 
-
 During the development of the site I also made extensive use of Chrome Developer Tools to view the content in different viewport sizes to assess how it was behaving. This then led to me using multiple media queries to make subtle changes to the code so that the content was always displayed correctly.
 
 In order to be completely satisfied that the site worked correctly across multiple browsers I completed the manual testing above after loading the site in Chrome, Internet Explorer, Edge and Firefox.
@@ -228,9 +234,9 @@ In order to be completely satisfied that the site worked correctly across multip
 
 In order to deploy the site I completed the following steps:
 
-1. I created a remote Git repository on GitHub. I then committed and pushed content from my local repository to the remote repository each time I added a new piece of functionality.
+1.  I created a remote Git repository on GitHub. I then committed and pushed content from my local repository to the remote repository each time I added a new piece of functionality.
 
-2. I linked my Github repository to my Travis CI account by first selecting settings within the Travis Dashboard, selecting the activate button and then selecting the respository I wanted to use with Travis. I then added the following .travis.yml file to my respository to tell Travis CI what to do:
+2.  I linked my Github repository to my Travis CI account by first selecting settings within the Travis Dashboard, selecting the activate button and then selecting the respository I wanted to use with Travis. I then added the following .travis.yml file to my respository to tell Travis CI what to do:
 
         language: python
         python:
@@ -243,7 +249,7 @@ In order to deploy the site I completed the following steps:
 
     This file was then pushed to Github to trigger a Travis CI build. I could then check the build status page to see if every time a new commit was made to Github the build passed or fail according to the return status of the build command by visiting the Travis CI website and selecting my repository. A visual representation of the build status is also present within this readme file, by embedding the url of the build status from the Travis CI website using markdown.
 
-3. I then created a new app within Heroku and linked this to my Github repository by going into the Deploy tab and selecting to deploy by Github. This then prompts you to select the appropriate repository from your GitHub account. You are then able to select from Automatic or Manual deploys. By selecting Automatic deploys it meant that whenever I pushed something to GitHub it automatically triggered a new build within Heroku. This allowed me to continually test the live version of the site in different browsers throughout development, to see how it was responding.
+3.  I then created a new app within Heroku and linked this to my Github repository by going into the Deploy tab and selecting to deploy by Github. This then prompts you to select the appropriate repository from your GitHub account. You are then able to select from Automatic or Manual deploys. By selecting Automatic deploys it meant that whenever I pushed something to GitHub it automatically triggered a new build within Heroku. This allowed me to continually test the live version of the site in different browsers throughout development, to see how it was responding.
 
     In the Settings tab within the app in Heroku I selected the Reveal Config Vars tab and input the following environment variables required for the static file, database, email and payment functionality to work correctly:
 
@@ -257,11 +263,11 @@ In order to deploy the site I completed the following steps:
 - STRIPE_PUBLISHABLE
 - STRIPE_SECRET
 
-4. Finally, I created a Procfile and requirements.txt file within my project folder and pushed these to my Git repository. The Procfile contained the following text to instruct Heroku that the application is a python web application: 
+4.  Finally, I created a Procfile and requirements.txt file within my project folder and pushed these to my Git repository. The Procfile contained the following text to instruct Heroku that the application is a python web application:
 
         web: gunicorn ecommerce.wsgi --log-file -
 
-      The requirements.txt file was created by running the following command:
+    The requirements.txt file was created by running the following command:
 
         pip freeze > requirements.txt
 
